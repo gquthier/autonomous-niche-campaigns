@@ -1,0 +1,117 @@
+{
+ "_lire": "Copier dans le dossier de travail sous le nom projet.json et remplir. Aucune clé ici : les secrets viennent des variables d'environnement (voir .env.example). Les identifiants Meta laissés vides sont lus dans META_AD_ACCOUNT, META_PAGE_ID, META_INSTAGRAM_ID, META_BUSINESS_ID. Toutes les valeurs ci-dessous sont fictives. Voir references/config.md.",
+ "nom": "Niches - exemple fictif",
+ "agence": {
+  "nom": "Agence Exemple",
+  "site": "https://www.example.com",
+  "positionnement": "Nous installons chez vous une infrastructure d'acquisition tenue par des agents IA.",
+  "signature_email": "Camille, Agence Exemple",
+  "logo_clair": "_commun/logos/logo-clair.png",
+  "logo_noir": "_commun/logos/logo-noir.png",
+  "presentation_generique": "_commun/presentation-generique/presentation.html"
+ },
+ "offre": {
+  "prix": "3 600 € HT pour 90 jours, réglés au départ",
+  "prix_ht": 3600,
+  "duree_jours": 90,
+  "garantie_courte": "Garantis ou remboursés.",
+  "variante_performance": "Payé à la performance.",
+  "garantie_mecanique": "prorata",
+  "prolongation_jours": 45,
+  "installation": "Mise en place en 5 jours",
+  "budget_pub": "Budget publicitaire en plus, réglé directement à Meta."
+ },
+ "meta": {
+  "token_var": "META_ACCESS_TOKEN",
+  "ad_account": "",
+  "page_id": "",
+  "instagram_user_id": "",
+  "business_id": "",
+  "graph_version": "v23.0",
+  "dsa_beneficiary": "Agence Exemple",
+  "dsa_payor": "Agence Exemple"
+ },
+ "formulaire": {
+  "nom": "IF - {label}",
+  "locale": "fr_FR",
+  "question_profil": "Vous êtes ?",
+  "question_ca": "Quel est votre chiffre d'affaires annuel ?",
+  "tranches_ca": [
+   "Moins de 150 000 €",
+   "150 000 à 300 000 €",
+   "300 000 à 600 000 €",
+   "600 000 € à 1,5 M€",
+   "Plus de 1,5 M€"
+  ],
+  "tranches_non_qualifiees": 1,
+  "lien_reservation": "https://calendrier.example.com/agence-exemple/etude",
+  "lien_confidentialite": "https://www.example.com/confidentialite",
+  "entete_questions": "Deux questions, puis réservez votre étude dans notre calendrier.",
+  "consigne_pub": "Répondez à deux questions, puis réservez votre étude dans notre calendrier.",
+  "page_fin": {
+   "titre": "Dernière étape : choisissez votre créneau",
+   "texte": "Réservez votre étude de 30 minutes dans notre calendrier pour la confirmer auprès de notre équipe.",
+   "bouton": "Réserver mon étude"
+  },
+  "nom_page_prospects": "Page de fin des prospects",
+  "navigateur": "Arc"
+ },
+ "campagne": {
+  "nom": "Instant Form - ABO | Niches | {mois}",
+  "budget_jour_par_niche": 15,
+  "pays": [
+   "FR",
+   "BE"
+  ],
+  "age_min": 25,
+  "age_max": 60,
+  "langues_meta": [
+   9,
+   44
+  ]
+ },
+ "creatives": {
+  "kie_key_var": "KIE_API_KEY",
+  "par_niche": 10,
+  "variantes_performance": 2,
+  "reserve_credits": 300
+ },
+ "recherche": {
+  "apify_token_var": "APIFY_TOKEN",
+  "pays": "FR"
+ },
+ "niches": [
+  {
+   "cle": "salles-de-sport",
+   "dossier": "1-salles-de-sport",
+   "label": "Salles de sport",
+   "ads_library": [
+    "vous êtes gérant de salle",
+    "salle de sport adhérents",
+    "séance d'essai offerte"
+   ]
+  },
+  {
+   "cle": "paysagistes",
+   "dossier": "2-paysagistes",
+   "label": "Paysagistes",
+   "ads_library": [
+    "vous êtes paysagiste",
+    "paysagiste chantiers",
+    "aménagement jardin devis"
+   ]
+  }
+ ],
+ "sequences": {
+  "_lire": "Mots que la maison n'écrit pas aux prospects, et nombres permis partout (la durée de l'étude) ; verifier.py s'en sert.",
+  "mots_interdits": [
+   "lead",
+   "leads",
+   "closing",
+   "tunnel"
+  ],
+  "nombres_permis": [
+   "30"
+  ]
+ }
+}

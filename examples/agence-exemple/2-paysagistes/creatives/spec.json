@@ -1,0 +1,151 @@
+[
+ {
+  "id": "N201-carte-typographique",
+  "format": "Carte typographique",
+  "prompt": "Flat graphic design, premium typographic poster, no photograph, no illustration, no icon. Background: a perfectly uniform warm off-white (#F6F2EA) over the whole canvas, no texture, no frame. Everything is left-aligned on one strict left margin at 9% of the canvas width. TEXT, from top to bottom. (1) Near the top, at 8% of the canvas height: a small bold uppercase label with wide letter spacing, deep green (#2E7D5B): \"PAYSAGISTES\". (2) Under it: a gigantic numeral \"24\" in deep green (#2E7D5B), in a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing, about 30% of the canvas height, by far the biggest element of the image. (3) Right under the numeral, in the same font, ink black (#100F0D), large, on 3 lines: \"visites de jardin\" / \"qualifiées chez des\" / \"propriétaires en 90 jours.\". (4) Under it, after a clear gap: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". (5) Under it: a deep green (#2E7D5B) rounded pill with bold white text: \"Mise en place en 5 jours\". Generous empty space on the right, strict alignment, one single focal point, the restraint of a premium brand. Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "PAYSAGISTES",
+   "24",
+   "visites de jardin",
+   "qualifiées chez des",
+   "propriétaires en 90 jours.",
+   "Garanties ou remboursées.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N202-aplat-couleur",
+  "format": "Aplat de couleur",
+  "prompt": "Flat graphic design, bold colour-block poster, no photograph, no illustration, no icon. Background: one perfectly uniform flat deep green (#2E7D5B) over the whole canvas. Everything centred. TEXT, from top to bottom: (1) at 9% of the canvas height, a small bold uppercase white label with wide letter spacing: \"PAYSAGISTES\". (2) a gigantic white numeral \"24\" in a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing, about 32% of the canvas height. (3) under it, bold white, large, on 3 lines: \"visites de jardin\" / \"qualifiées chez des\" / \"propriétaires en 90 jours.\". (4) a white rounded bar holding one line of large bold ink-black (#100F0D) text: \"Garanties ou remboursées.\". (5) under it, small bold white text: \"Mise en place en 5 jours\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "PAYSAGISTES",
+   "24",
+   "visites de jardin",
+   "qualifiées chez des",
+   "propriétaires en 90 jours.",
+   "Garanties ou remboursées.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": "clair"
+ },
+ {
+  "id": "N203-photo-metier",
+  "format": "Photo du métier en plein jour avec carte d'offre",
+  "prompt": "Photorealistic photograph, bright natural daylight, high-key, luminous, real and unretouched: a landscape gardener walking a homeowner through a sunny garden, seen from behind, fresh lawn and young hedges. No face in sharp focus, no logo, no readable sign. Over the lower-middle part of the photo: a pure white card with soft rounded corners and a soft shadow, about 78% of the canvas width, left edge at 11%. TEXT on the card, left-aligned: (1) small bold uppercase label, deep green (#2E7D5B), wide letter spacing: \"PAYSAGISTES\". (2) a very large numeral \"24\" in deep green (#2E7D5B), a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black (#100F0D) on 2 lines: \"visites qualifiées en\" / \"90 jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". Nothing else written anywhere in the image. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "PAYSAGISTES",
+   "24",
+   "visites qualifiées en",
+   "90 jours.",
+   "Garanties ou remboursées."
+  ],
+  "logo": null
+ },
+ {
+  "id": "N204-objet-porteur",
+  "format": "Objet du métier porteur du texte",
+  "prompt": "Photorealistic photograph, bright soft daylight, high-key: a clean white site sign on a garden fence, seen exactly from the front, perfectly flat and straight, about 72% of the canvas width, centred. Background softly out of focus, light and clean. TEXT printed on the object, crisp, centred, from top to bottom: (1) bold uppercase deep green (#2E7D5B) label: \"PAYSAGISTES\". (2) a gigantic ink-black numeral \"24\", a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black on 2 lines: \"visites qualifiées\" / \"en 90 jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". (5) a deep green (#2E7D5B) rounded pill with bold white text: \"Mise en place en 5 jours\". No other text anywhere. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "PAYSAGISTES",
+   "24",
+   "visites qualifiées",
+   "en 90 jours.",
+   "Garanties ou remboursées.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N205-note-telephone",
+  "format": "Note de téléphone",
+  "prompt": "Realistic full-frame screenshot of the Notes app on a smartphone, light mode, pure white background, French interface, no phone bezel, no hand. Status bar with the time \"09:41\", then signal, wifi and battery icons, no carrier name. Top-left: a yellow back chevron followed by \"Notes\" in yellow. Standard system typography, large and readable. Note content: a very large bold black title on 3 lines: \"Paysagistes :\" / \"24 visites qualifiées\" / \"en 90 jours\". Under it, a checklist, each item with a round yellow ticked checkbox, in this order: \"Garanties ou remboursées\" / \"150 € remboursés par visite manquante\" / \"Ou 45 jours de plus sans frais, à votre choix\" / \"Mise en place en 5 jours\" / \"Budget publicitaire en plus\". Text size very large, like the largest accessibility setting: title and checklist fill about 80% of the screen height, an item may wrap on two lines. Nothing else on the note. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "09:41",
+   "Notes",
+   "Paysagistes :",
+   "24 visites qualifiées",
+   "en 90 jours",
+   "Garanties ou remboursées",
+   "150 € remboursés par visite manquante",
+   "Ou 45 jours de plus sans frais, à votre choix",
+   "Mise en place en 5 jours",
+   "Budget publicitaire en plus"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N206-ecran-notifications",
+  "format": "Écran verrouillé avec notifications",
+  "prompt": "Realistic full-frame smartphone lock screen, light bright wallpaper (soft pale gradient), no phone bezel, no hand, no carrier name, no app logo. Large clock \"09:41\" at the top. Under it, a small bold uppercase label in deep green (#2E7D5B): \"PAYSAGISTES\". Then 3 stacked white rounded notification cards, each with one bold line: \"Nouvelle demande de visite\" / \"Visite confirmée\" / \"Visite confirmée\". Under the cards: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". At the very bottom, small grey text: \"Exemple de fiche\". TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "09:41",
+   "PAYSAGISTES",
+   "Nouvelle demande de visite",
+   "Visite confirmée",
+   "Visite confirmée",
+   "Garanties ou remboursées.",
+   "Exemple de fiche"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N207-comparatif",
+  "format": "Comparatif en deux colonnes",
+  "prompt": "Flat graphic design on a pure white background, no photograph. At the top, centred, a small bold uppercase deep green (#2E7D5B) label: \"PAYSAGISTES\". Two rounded columns side by side, exactly the same size, natural letter proportions, never condensed and never squeezed: left column light grey (#ECEAE6) with grey text on 2 lines: \"Un contact acheté\" / \"à rappeler vous-même\"; right column deep green (#2E7D5B) with bold white text on 2 lines: \"24 visites qualifiées\" / \"dans votre agenda\". Under the columns, centred: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "PAYSAGISTES",
+   "Un contact acheté",
+   "à rappeler vous-même",
+   "24 visites qualifiées",
+   "dans votre agenda",
+   "Garanties ou remboursées."
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N208-agenda-semaine",
+  "format": "Agenda de la semaine rempli",
+  "prompt": "Clean flat illustration of a weekly calendar view on a white background, light mode, five day columns with these headers: \"Lundi\" / \"Mardi\" / \"Mercredi\" / \"Jeudi\" / \"Vendredi\". Several time slots are filled with plain deep green (#2E7D5B) blocks without any text; one block on Thursday is highlighted with a soft glow. Above the calendar, left-aligned: a small bold uppercase deep green label \"PAYSAGISTES\", then a huge numeral \"24\" and the words \"visites qualifiées\" in ink black, a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. Under the calendar: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "Lundi",
+   "Mardi",
+   "Mercredi",
+   "Jeudi",
+   "Vendredi",
+   "PAYSAGISTES",
+   "24",
+   "visites qualifiées",
+   "Garanties ou remboursées."
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N209-carton-invitation",
+  "format": "Carton d'invitation adressé à la cible, vue de dessus",
+  "prompt": "Photorealistic top-down flat-lay photograph, camera perfectly vertical, bright soft daylight, high-key, soft natural shadows. The whole canvas is a light wooden garden table in sunlight. Centred: a thick matte pure-white invitation card, portrait, perfectly flat and straight, about 70% of the canvas width, top edge at 13% and bottom edge at 85% of the canvas height. Neatly arranged around the card and never covering its text: a pair of clean pruning shears, a small terracotta pot with a seedling, a rolled garden plan without any writing. Nothing else. TEXT printed on the card, centred: (1) a small bold uppercase deep green (#2E7D5B) label with wide letter spacing: \"RÉSERVÉ AUX PAYSAGISTES\". (2) a gigantic ink-black numeral \"24\", a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black on 2 lines: \"visites qualifiées\" / \"en 90 jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garanties ou remboursées.\". (5) at the bottom of the card, a deep green (#2E7D5B) rounded pill with bold white text: \"Mise en place en 5 jours\". TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "RÉSERVÉ AUX PAYSAGISTES",
+   "24",
+   "visites qualifiées",
+   "en 90 jours.",
+   "Garanties ou remboursées.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N210-certificat-garantie",
+  "format": "Certificat de garantie avec sceau",
+  "prompt": "Photorealistic photograph of an elegant printed certificate on thick cream paper (#FBF8F1), seen exactly from the front, perfectly flat, thin fine double border in deep green (#2E7D5B), a round embossed deep green seal at the bottom right with no text in it. Bright, soft, premium. TEXT on the certificate, centred: (1) small uppercase spaced: \"CERTIFICAT DE GARANTIE\". (2) small bold uppercase deep green label: \"PAYSAGISTES\". (3) large bold ink black: \"24 visites qualifiées\". (4) \"en 90 jours\". (5) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"150 € remboursés par visite manquante\". (6) small ink text: \"Ou 45 jours de plus sans frais, à votre choix\". No signature scribble, no other text. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "CERTIFICAT DE GARANTIE",
+   "PAYSAGISTES",
+   "24 visites qualifiées",
+   "en 90 jours",
+   "150 € remboursés par visite manquante",
+   "Ou 45 jours de plus sans frais, à votre choix"
+  ],
+  "logo": null
+ }
+]

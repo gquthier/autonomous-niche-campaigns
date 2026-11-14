@@ -1,0 +1,45 @@
+{
+ "_lire": "Exemple entièrement fictif, réduit aux clés que lisent les scripts.",
+ "label": "Paysagistes",
+ "cible_pub": "Paysagistes",
+ "unite_longue": "visites de jardin qualifiées chez des propriétaires",
+ "unite_courte": "visites qualifiées",
+ "unite_manquante": "visite manquante",
+ "volume_garanti": 24,
+ "duree_jours": 90,
+ "remboursement_par_unite": 150,
+ "prix_ht": "3 600 € HT pour 90 jours, réglés au départ",
+ "garantie_courte": "Garanties ou remboursées.",
+ "garantie_phrase": "24 visites de jardin qualifiées chez des propriétaires en 90 jours, ou 150 € remboursés par visite manquante, ou 45 jours de plus sans frais, à votre choix. Budget publicitaire en plus, réglé directement à Meta.",
+ "promesse_pub": "Paysagistes : 24 visites qualifiées en 90 jours. Garanties ou remboursées.",
+ "ligne_metier": "Des propriétaires au budget annoncé, qui vous reçoivent dans leur jardin pour un devis.",
+ "formulaire_q1_options": [
+  "Paysagiste créateur de jardins",
+  "Entreprise d'espaces verts",
+  "Entretien de jardins uniquement",
+  "Autre"
+ ],
+ "profils_vises": [
+  "Paysagiste créateur de jardins",
+  "Entreprise d'espaces verts"
+ ],
+ "formulaire_ca_min": "150 000 à 300 000 €",
+ "risque_principal": "La saison : l'essentiel des projets se décide au printemps ; une garantie sur 90 jours lancée en automne se rattrape mal.",
+ "creatives_en": {
+  "accent": "#2E7D5B",
+  "accent_nom": "deep green",
+  "scene": "a landscape gardener walking a homeowner through a sunny garden, seen from behind, fresh lawn and young hedges",
+  "objets": [
+   "a pair of clean pruning shears",
+   "a small terracotta pot with a seedling",
+   "a rolled garden plan without any writing"
+  ],
+  "objet_porteur": "a clean white site sign on a garden fence",
+  "table": "a light wooden garden table in sunlight"
+ },
+ "notifications": [
+  "Nouvelle demande de visite",
+  "Visite confirmée",
+  "Visite confirmée"
+ ]
+}

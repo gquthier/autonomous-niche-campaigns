@@ -1,0 +1,149 @@
+[
+ {
+  "id": "N101-carte-typographique",
+  "format": "Carte typographique",
+  "prompt": "Flat graphic design, premium typographic poster, no photograph, no illustration, no icon. Background: a perfectly uniform warm off-white (#F6F2EA) over the whole canvas, no texture, no frame. Everything is left-aligned on one strict left margin at 9% of the canvas width. TEXT, from top to bottom. (1) Near the top, at 8% of the canvas height: a small bold uppercase label with wide letter spacing, vivid orange (#F26B1D): \"SALLES DE SPORT\". (2) Under it: a gigantic numeral \"40\" in vivid orange (#F26B1D), in a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing, about 30% of the canvas height, by far the biggest element of the image. (3) Right under the numeral, in the same font, ink black (#100F0D), large, on 2 lines: \"essais encadrés tenus dans\" / \"votre club en 90 jours.\". (4) Under it, after a clear gap: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". (5) Under it: a vivid orange (#F26B1D) rounded pill with bold white text: \"Mise en place en 5 jours\". Generous empty space on the right, strict alignment, one single focal point, the restraint of a premium brand. Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "SALLES DE SPORT",
+   "40",
+   "essais encadrés tenus dans",
+   "votre club en 90 jours.",
+   "Garantis ou remboursés.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N102-aplat-couleur",
+  "format": "Aplat de couleur",
+  "prompt": "Flat graphic design, bold colour-block poster, no photograph, no illustration, no icon. Background: one perfectly uniform flat vivid orange (#F26B1D) over the whole canvas. Everything centred. TEXT, from top to bottom: (1) at 9% of the canvas height, a small bold uppercase white label with wide letter spacing: \"SALLES DE SPORT\". (2) a gigantic white numeral \"40\" in a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing, about 32% of the canvas height. (3) under it, bold white, large, on 2 lines: \"essais encadrés tenus dans\" / \"votre club en 90 jours.\". (4) a white rounded bar holding one line of large bold ink-black (#100F0D) text: \"Garantis ou remboursés.\". (5) under it, small bold white text: \"Mise en place en 5 jours\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "SALLES DE SPORT",
+   "40",
+   "essais encadrés tenus dans",
+   "votre club en 90 jours.",
+   "Garantis ou remboursés.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": "clair"
+ },
+ {
+  "id": "N103-photo-metier",
+  "format": "Photo du métier en plein jour avec carte d'offre",
+  "prompt": "Photorealistic photograph, bright natural daylight, high-key, luminous, real and unretouched: a coach welcoming a newcomer on the bright training floor of an independent gym, large windows, morning daylight, both seen from behind. No face in sharp focus, no logo, no readable sign. Over the lower-middle part of the photo: a pure white card with soft rounded corners and a soft shadow, about 78% of the canvas width, left edge at 11%. TEXT on the card, left-aligned: (1) small bold uppercase label, vivid orange (#F26B1D), wide letter spacing: \"SALLES DE SPORT\". (2) a very large numeral \"40\" in vivid orange (#F26B1D), a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black (#100F0D) on 2 lines: \"essais tenus en 90\" / \"jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". Nothing else written anywhere in the image. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "SALLES DE SPORT",
+   "40",
+   "essais tenus en 90",
+   "jours.",
+   "Garantis ou remboursés."
+  ],
+  "logo": null
+ },
+ {
+  "id": "N104-objet-porteur",
+  "format": "Objet du métier porteur du texte",
+  "prompt": "Photorealistic photograph, bright soft daylight, high-key: a clean white A-frame sign board standing at the entrance of a bright gym, seen exactly from the front, perfectly flat and straight, about 72% of the canvas width, centred. Background softly out of focus, light and clean. TEXT printed on the object, crisp, centred, from top to bottom: (1) bold uppercase vivid orange (#F26B1D) label: \"SALLES DE SPORT\". (2) a gigantic ink-black numeral \"40\", a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black on 2 lines: \"essais tenus en 90\" / \"jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". (5) a vivid orange (#F26B1D) rounded pill with bold white text: \"Mise en place en 5 jours\". No other text anywhere. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "SALLES DE SPORT",
+   "40",
+   "essais tenus en 90",
+   "jours.",
+   "Garantis ou remboursés.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N105-note-telephone",
+  "format": "Note de téléphone",
+  "prompt": "Realistic full-frame screenshot of the Notes app on a smartphone, light mode, pure white background, French interface, no phone bezel, no hand. Status bar with the time \"09:41\", then signal, wifi and battery icons, no carrier name. Top-left: a yellow back chevron followed by \"Notes\" in yellow. Standard system typography, large and readable. Note content: a very large bold black title on 3 lines: \"Salles de sport :\" / \"40 essais tenus\" / \"en 90 jours\". Under it, a checklist, each item with a round yellow ticked checkbox, in this order: \"Garantis ou remboursés\" / \"90 € remboursés par essai manquant\" / \"Ou 45 jours de plus sans frais, à votre choix\" / \"Mise en place en 5 jours\" / \"Budget publicitaire en plus\". Text size very large, like the largest accessibility setting: title and checklist fill about 80% of the screen height, an item may wrap on two lines. Nothing else on the note. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "09:41",
+   "Notes",
+   "Salles de sport :",
+   "40 essais tenus",
+   "en 90 jours",
+   "Garantis ou remboursés",
+   "90 € remboursés par essai manquant",
+   "Ou 45 jours de plus sans frais, à votre choix",
+   "Mise en place en 5 jours",
+   "Budget publicitaire en plus"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N106-ecran-notifications",
+  "format": "Écran verrouillé avec notifications",
+  "prompt": "Realistic full-frame smartphone lock screen, light bright wallpaper (soft pale gradient), no phone bezel, no hand, no carrier name, no app logo. Large clock \"09:41\" at the top. Under it, a small bold uppercase label in vivid orange (#F26B1D): \"SALLES DE SPORT\". Then 3 stacked white rounded notification cards, each with one bold line: \"Nouvelle demande d'essai\" / \"Essai confirmé\" / \"Essai confirmé\". Under the cards: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". At the very bottom, small grey text: \"Exemple de fiche\". TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "09:41",
+   "SALLES DE SPORT",
+   "Nouvelle demande d'essai",
+   "Essai confirmé",
+   "Essai confirmé",
+   "Garantis ou remboursés.",
+   "Exemple de fiche"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N107-comparatif",
+  "format": "Comparatif en deux colonnes",
+  "prompt": "Flat graphic design on a pure white background, no photograph. At the top, centred, a small bold uppercase vivid orange (#F26B1D) label: \"SALLES DE SPORT\". Two rounded columns side by side, exactly the same size, natural letter proportions, never condensed and never squeezed: left column light grey (#ECEAE6) with grey text on 2 lines: \"Un contact acheté\" / \"à rappeler vous-même\"; right column vivid orange (#F26B1D) with bold white text on 2 lines: \"40 essais tenus\" / \"dans votre agenda\". Under the columns, centred: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "SALLES DE SPORT",
+   "Un contact acheté",
+   "à rappeler vous-même",
+   "40 essais tenus",
+   "dans votre agenda",
+   "Garantis ou remboursés."
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N108-agenda-semaine",
+  "format": "Agenda de la semaine rempli",
+  "prompt": "Clean flat illustration of a weekly calendar view on a white background, light mode, five day columns with these headers: \"Lundi\" / \"Mardi\" / \"Mercredi\" / \"Jeudi\" / \"Vendredi\". Several time slots are filled with plain vivid orange (#F26B1D) blocks without any text; one block on Thursday is highlighted with a soft glow. Above the calendar, left-aligned: a small bold uppercase vivid orange label \"SALLES DE SPORT\", then a huge numeral \"40\" and the words \"essais tenus\" in ink black, a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. Under the calendar: a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". Leave the bottom 10% of the canvas completely empty: plain background, no text, no line, no shape. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "Lundi",
+   "Mardi",
+   "Mercredi",
+   "Jeudi",
+   "Vendredi",
+   "SALLES DE SPORT",
+   "40",
+   "essais tenus",
+   "Garantis ou remboursés."
+  ],
+  "logo": "noir"
+ },
+ {
+  "id": "N109-carton-invitation",
+  "format": "Carton d'invitation adressé à la cible, vue de dessus",
+  "prompt": "Photorealistic top-down flat-lay photograph, camera perfectly vertical, bright soft daylight, high-key, soft natural shadows. The whole canvas is a light oak reception desk of a gym. Centred: a thick matte pure-white invitation card, portrait, perfectly flat and straight, about 70% of the canvas width, top edge at 13% and bottom edge at 85% of the canvas height. Neatly arranged around the card and never covering its text: a neatly folded white towel, a plain water bottle without any label, a pair of light dumbbells. Nothing else. TEXT printed on the card, centred: (1) a small bold uppercase vivid orange (#F26B1D) label with wide letter spacing: \"RÉSERVÉ AUX SALLES DE SPORT\". (2) a gigantic ink-black numeral \"40\", a very bold geometric sans-serif (the spirit of Jost Bold or Futura Bold), tight line spacing. (3) bold ink black on 2 lines: \"essais tenus\" / \"en 90 jours.\". (4) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"Garantis ou remboursés.\". (5) at the bottom of the card, a vivid orange (#F26B1D) rounded pill with bold white text: \"Mise en place en 5 jours\". TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "RÉSERVÉ AUX SALLES DE SPORT",
+   "40",
+   "essais tenus",
+   "en 90 jours.",
+   "Garantis ou remboursés.",
+   "Mise en place en 5 jours"
+  ],
+  "logo": null
+ },
+ {
+  "id": "N110-certificat-garantie",
+  "format": "Certificat de garantie avec sceau",
+  "prompt": "Photorealistic photograph of an elegant printed certificate on thick cream paper (#FBF8F1), seen exactly from the front, perfectly flat, thin fine double border in vivid orange (#F26B1D), a round embossed vivid orange seal at the bottom right with no text in it. Bright, soft, premium. TEXT on the certificate, centred: (1) small uppercase spaced: \"CERTIFICAT DE GARANTIE\". (2) small bold uppercase vivid orange label: \"SALLES DE SPORT\". (3) large bold ink black: \"40 essais tenus\". (4) \"en 90 jours\". (5) a highlighter-yellow (#FFE14D) bar with slightly rounded corners, like one clean marker stroke, only as wide as its text plus padding, holding one single line of large bold ink-black (#100F0D) text, clearly larger than the pill text: \"90 € remboursés par essai manquant\". (6) small ink text: \"Ou 45 jours de plus sans frais, à votre choix\". No signature scribble, no other text. TEXT RULES: render the French text EXACTLY as written between the double quotation marks: same words, same accents (é, è, ê, à, â, ç, î), same apostrophes and punctuation, each sentence complete, sharp and fully legible, never cropped. Do not render the quotation marks themselves. Do not add any other word, number, slogan, logo, brand name, watermark, emoji, exclamation mark, hashtag, sticker or fake button. Keep every piece of text at least 7% away from each edge of the canvas. FORMAT: static advertisement for the Meta feed, portrait 4:5, bright, clean, premium, high-impact, French market.",
+  "expect": [
+   "CERTIFICAT DE GARANTIE",
+   "SALLES DE SPORT",
+   "40 essais tenus",
+   "en 90 jours",
+   "90 € remboursés par essai manquant",
+   "Ou 45 jours de plus sans frais, à votre choix"
+  ],
+  "logo": null
+ }
+]

@@ -1,0 +1,143 @@
+{
+ "_lire": "Exemple entièrement fictif : niche, chiffres, concurrents, bonus et prix « ailleurs » sont inventés pour montrer le format. Un vrai resume.json reprend les chiffres sourcés d'analyse.md et d'offre.md.",
+ "label": "Salles de sport",
+ "niche": "Salles de sport indépendantes",
+ "cible": "Gérant d'un club de fitness indépendant ou franchisé libre de sa publicité locale, 1 à 2 sites, 150 000 € de chiffre d'affaires ou plus, au moins un coach salarié.",
+ "cible_pub": "Salles de sport",
+ "unite": "Essai encadré tenu : habitant de la zone, majeur, venu au club et accueilli par un coach pour une séance d'essai, validé sous 48 heures.",
+ "unite_longue": "essais encadrés tenus dans votre club",
+ "unite_courte": "essais tenus",
+ "unite_manquante": "essai manquant",
+ "volume_garanti": 40,
+ "duree_jours": 90,
+ "remboursement_par_unite": 90,
+ "prix_ht": "3 600 € HT pour 90 jours, réglés au départ",
+ "budget_media_min_mois": 1200,
+ "garantie_courte": "Garantis ou remboursés.",
+ "garantie_phrase": "40 essais encadrés tenus dans votre club en 90 jours, ou 90 € remboursés par essai manquant, ou 45 jours de plus sans frais, à votre choix. Budget publicitaire en plus, réglé directement à Meta.",
+ "promesse_pub": "Salles de sport : 40 essais tenus en 90 jours. Garantis ou remboursés.",
+ "ligne_metier": "Des habitants de votre quartier qui viennent faire leur séance d'essai, accueillis par vos coachs.",
+ "titres": [
+  "40 essais tenus en 90 jours",
+  "Salles de sport : 40 essais tenus",
+  "90 € remboursés par essai manquant",
+  "Garantis ou remboursés",
+  "Mise en place en 5 jours"
+ ],
+ "formulaire_q1": "Vous êtes ?",
+ "formulaire_q1_options": [
+  "Club de fitness indépendant",
+  "Franchisé d'un réseau",
+  "Studio de yoga ou de pilates",
+  "Autre"
+ ],
+ "profils_vises": [
+  "Club de fitness indépendant",
+  "Franchisé d'un réseau"
+ ],
+ "formulaire_q2": "Quel est votre chiffre d'affaires annuel ?",
+ "formulaire_q2_options": [
+  "Moins de 150 000 €",
+  "150 000 à 300 000 €",
+  "300 000 à 600 000 €",
+  "600 000 € à 1,5 M€",
+  "Plus de 1,5 M€"
+ ],
+ "formulaire_ca_min": "150 000 à 300 000 €",
+ "avatar": [
+  "Gérant d'un club indépendant, souvent ancien coach : il décide seul et compte en abonnements signés.",
+  "Il fait l'accueil, le planning et les réseaux sociaux entre deux cours ; janvier et septembre font son année.",
+  "Il a déjà payé des flyers, une plateforme de réservation à commission et une agence qui promettait des adhérents : il parle d'essais, d'abonnements et de résiliations, jamais de leads."
+ ],
+ "objets_metier": [
+  "serviette pliée",
+  "gourde sans marque",
+  "haltères légers",
+  "planning des cours",
+  "badge d'accès",
+  "comptoir d'accueil"
+ ],
+ "reglementation": [
+  "Rappel téléphonique d'un particulier seulement après un consentement préalable qui nomme le club et l'agence [avocat].",
+  "L'agent IA se présente comme assistant automatique dès le premier message.",
+  "Messages WhatsApp et SMS : case de consentement distincte.",
+  "Publicité de l'agence : « garanti » avec ses conditions à portée de clic, et le budget publicitaire dit."
+ ],
+ "concurrents": [
+  {
+   "nom": "Concurrent A (fictif)",
+   "promesse": "« 30 essais en 90 jours »",
+   "prix": "non publié",
+   "garantie": "aucune écrite",
+   "lien": "https://www.example.com/concurrent-a"
+  },
+  {
+   "nom": "Concurrent B (fictif)",
+   "promesse": "« Remplissez vos cours d'essai »",
+   "prix": "abonnement mensuel",
+   "garantie": "premier mois offert",
+   "lien": "https://www.example.com/concurrent-b"
+  }
+ ],
+ "risque_principal": "Personne n'a mesuré le coût d'un essai tenu venu de Meta dans la zone : s'il dépasse l'hypothèse centrale, le volume ne tient pas dans le budget minimum et l'agence rembourse au prorata.",
+ "bonus": [
+  {
+   "nom": "Rappels et confirmation des essais",
+   "probleme": "La moitié des essais réservés ne viennent pas, et je bloque un coach pour rien.",
+   "ce_que_fait_l_agent": "Il confirme chaque essai la veille par écrit, propose un autre créneau en cas d'empêchement et prévient le coach.",
+   "situation_desiree": "Vos coachs n'attendent plus un essai qui ne vient pas.",
+   "prix_ailleurs": "Exemple fictif : logiciel de rappels, quelques dizaines d'euros par mois.",
+   "source": "À remplir : lien et date de lecture.",
+   "cout": "Quelques centimes par message (hypothèse)."
+  },
+  {
+   "nom": "Relance des essais jusqu'à l'abonnement",
+   "probleme": "Ils disent qu'ils réfléchissent, et personne ne les rappelle.",
+   "ce_que_fait_l_agent": "Il écrit à J+1, J+4 et J+10 à ceux qui l'ont accepté, et prévient le gérant quand une réponse demande un appel.",
+   "situation_desiree": "Chaque essai est suivi jusqu'au oui ou au non.",
+   "prix_ailleurs": "Exemple fictif : heures d'assistante.",
+   "source": "À remplir : lien et date de lecture.",
+   "cout": "Quelques centimes par message (hypothèse)."
+  },
+  {
+   "nom": "Standard de l'accueil",
+   "probleme": "Pendant mes cours, le téléphone sonne dans le vide.",
+   "ce_que_fait_l_agent": "Il décroche quand personne ne répond, s'annonce comme assistant automatique, répond aux questions simples et propose un essai. Il n'appelle jamais.",
+   "situation_desiree": "Plus un appel perdu pendant un cours.",
+   "prix_ailleurs": "Exemple fictif : permanence téléphonique.",
+   "source": "À remplir : lien et date de lecture.",
+   "cout": "Minutes d'appel (hypothèse)."
+  },
+  {
+   "nom": "Fiche Google et avis",
+   "probleme": "Mes adhérents sont contents mais n'écrivent rien.",
+   "ce_que_fait_l_agent": "Il demande un avis à tous les nouveaux adhérents, sans tri ni contrepartie, et prépare une réponse que le gérant valide.",
+   "situation_desiree": "Chaque nouvel adhérent laisse un avis.",
+   "prix_ailleurs": "Exemple fictif : gestion de fiche par une agence.",
+   "source": "À remplir : lien et date de lecture.",
+   "cout": "Négligeable."
+  }
+ ],
+ "creatives_en": {
+  "accent": "#F26B1D",
+  "accent_nom": "vivid orange",
+  "scene": "a coach welcoming a newcomer on the bright training floor of an independent gym, large windows, morning daylight, both seen from behind",
+  "objets": [
+   "a neatly folded white towel",
+   "a plain water bottle without any label",
+   "a pair of light dumbbells"
+  ],
+  "objet_porteur": "a clean white A-frame sign board standing at the entrance of a bright gym",
+  "table": "a light oak reception desk of a gym"
+ },
+ "notifications": [
+  "Nouvelle demande d'essai",
+  "Essai confirmé",
+  "Essai confirmé"
+ ],
+ "variantes_performance": [
+  "N101-carte-typographique",
+  "N102-aplat-couleur"
+ ],
+ "variantes_performance_en_pause": false
+}

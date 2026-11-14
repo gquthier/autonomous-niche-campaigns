@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+# état et simulation d'un dossier de travail : identifiants de compte, jamais versionnés
+_meta/
+# images générées, aperçus, binaire OCR compilé
+creatives/work/
+creatives/final/
+scripts/creatives/ocr
+*.png
+*.jpg
+*.mp4
+*.mov

@@ -1,0 +1,42 @@
+[
+ {
+  "adArchiveId": "FICTIF-001",
+  "pageName": "Concurrent A (fictif)",
+  "startDate": 1782598906,
+  "snapshot": {
+   "body": {
+    "text": "Vous êtes gérant de salle ? 30 essais en 90 jours, ou on continue gratuitement."
+   },
+   "title": "30 essais en 90 jours",
+   "ctaText": "En savoir plus",
+   "linkUrl": "https://www.example.com/concurrent-a",
+   "displayFormat": "IMAGE",
+   "pageCategories": [
+    "Agence de marketing"
+   ],
+   "images": [
+    {
+     "originalImageUrl": "https://www.example.com/visuel-a.jpg"
+    }
+   ]
+  }
+ },
+ {
+  "adArchiveId": "FICTIF-002",
+  "pageName": "Club Exemple (fictif)",
+  "startDate": 1792966906,
+  "snapshot": {
+   "body": {
+    "text": "Séance d'essai offerte cette semaine dans votre club de quartier."
+   },
+   "title": "Votre essai offert",
+   "ctaText": "Réserver",
+   "linkUrl": "https://www.example.com/club",
+   "displayFormat": "IMAGE",
+   "pageCategories": [
+    "Salle de sport"
+   ],
+   "images": []
+  }
+ }
+]
