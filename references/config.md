@@ -15,10 +15,16 @@ Le dossier de travail est privé : il contient l'offre, les études, les identif
     analyse.md   offre.md   publicite.md   resume.json
     presentation/presentation.html, presentation.pdf, pages/
     creatives/spec.json   creatives/work/{raw,jobs,view}/   creatives/final/*.jpg
+    cbo/angles.json   cbo/statiques/<angle>-S01-4x5.jpg, -9x16.jpg   (passage en CBO, voir cbo.md)
   sequences-email/sequence-formulaire.json, sequences.md
+  cbo/resultats-abo.csv            export des résultats de l'ABO par annonce (gestionnaire de publicités)
+  cbo/annonces.csv                 grille et copy de la CBO, une ligne par annonce (cbo.py grille)
   _meta/etat.json                  identifiants Meta créés (ne pas éditer à la main sauf réparation)
   _meta/editeur.json               onglet du navigateur piloté
   _meta/etat.dry-run.json, monde.dry-run.json   simulation (--dry-run), jamais mélangée avec l'état réel
+  _meta/cbo-etat-lu.json           état réel relu par cbo.py lire (identifiants : privé)
+  _meta/apercu-formulaires.json    relevé de l'aperçu de chaque formulaire, rempli après test
+  _meta/push-verified.json         la preuve : écrit par cbo.py verifier seulement si tout passe
 ```
 
 ## Champs de projet.json
@@ -28,9 +34,20 @@ Le dossier de travail est privé : il contient l'offre, les études, les identif
 - `meta` : `token_var` (nom de la variable qui porte le jeton, `META_ACCESS_TOKEN` par défaut), `ad_account` (`act_…`), `page_id`, `instagram_user_id` (compte Instagram relié à la page, facultatif), `business_id` (facultatif, pour l'adresse de l'éditeur), `graph_version`, `dsa_beneficiary` / `dsa_payor` (nom légal affiché dans l'UE). Laissés vides, les quatre identifiants sont lus dans `META_AD_ACCOUNT`, `META_PAGE_ID`, `META_INSTAGRAM_ID`, `META_BUSINESS_ID`.
 - `formulaire` : `nom` (modèle, `{label}` = libellé de la niche ; la base s'appelle « <nom> (base) »), `locale`, `question_profil`, `question_ca`, `tranches_ca`, `tranches_non_qualifiees` (combien de tranches, depuis le haut, sont sous le seuil), `lien_reservation` (calendrier sans UTM : ils sont ajoutés), `lien_confidentialite` (obligatoire), `entete_questions`, `consigne_pub` (dernière ligne des publicités), `page_fin` (`titre`, `texte`, `bouton`), `nom_page_prospects`, `navigateur` (`Arc` ou `Google Chrome`).
 - `campagne` : `nom` (`{mois}` remplacé par le mois et l'année), `budget_jour_par_niche` (euros), `pays`, `age_min`, `age_max`, `langues_meta` (facultatif ; 9 et 44 : français), `prefixe_adset` (facultatif).
+- `cbo` (passage en CBO, `cbo.md`) :
+  - `campagne_nom`, `adset_nom`, `formulaire_nom` : modèles, avec `{label}`, `{agence}`, `{angle}` et `{titre}` ;
+  - `budget_jour_par_campagne` (euros) ;
+  - `angles_min` (3), `statiques_min` (4), `statiques_max` (8) ;
+  - `formats` : tailles attendues, `4x5` 1080 × 1350 et `9x16` 1080 × 1920 ;
+  - `bouton` ;
+  - `non_qualifies` : `sans_trace`, `reservation_marquee` ou `liste`, **à décider avec la personne avant de publier** ;
+  - `fraicheur_minutes` (60) : au-delà, `verifier` exige un nouveau `lire` ;
+  - `accents_permis` : mots à ne pas signaler, par exemple une marque.
 - `creatives` : `kie_key_var`, `par_niche` (10), `variantes_performance` (2), `reserve_credits` (gen.py refuse de descendre sous ce solde).
 - `recherche` : `apify_token_var`, `pays` de la Bibliothèque publicitaire.
 - `sequences` : `mots_interdits` (mots que l'agence n'écrit pas aux prospects), `nombres_permis` (nombres admis partout, par défaut « 30 », la durée de l'étude).
+- `<niche>/resume.json → formulaire_intro` (facultatif) : `titre` et `texte` de la carte d'intro du formulaire, quand elle doit différer des publicités (vague CBO, nouvelle promesse).
+- `<niche>/cbo/angles.json` : `code` (lettre des clés d'angle), `promesse` (dite à l'identique par les annonces et le formulaire), `expressions_interdites` (anciennes formulations), `angles[]` (`cle`, `titre`, `gagnant_de_depart`, `hypothese`, `texte_principal`, `texte_court`, `texte_long`, `description`, `statiques[]` avec `format`, `accroche`, `titre`).
 - `niches[]` : `cle` (ASCII, sert dans les UTM et l'état), `dossier`, `label` (affiché : nom du formulaire, de l'ad set), `ads_library` (requêtes courtes).
 
 ## Le jeton Meta : ce qu'il lui faut

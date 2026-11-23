@@ -1,0 +1,50 @@
+{
+ "_lire": "Exemple fictif. Même décision que pour les salles de sport : la garantie porte sur des demandes de visite préqualifiées, plus sur des visites qualifiées. Le panneau de chantier et la carte typographique ont porté la niche dans l'ABO.",
+ "code": "P",
+ "promesse": "24 demandes de visite préqualifiées en 90 jours",
+ "expressions_interdites": ["visites qualifiées", "visites de jardin qualifiées"],
+ "angles": [
+  {
+   "cle": "P1",
+   "titre": "Le budget annoncé avant le déplacement",
+   "gagnant_de_depart": "N204-objet-porteur",
+   "hypothese": "Le paysagiste perd ses après-midi en visites sans budget : le panneau de chantier a porté la niche, il porte ici la question du budget.",
+   "texte_principal": "Paysagistes : avant de prendre la route, vous savez quel budget le propriétaire a prévu et quand il veut commencer. Nous trouvons ces demandes dans votre zone, posons les questions, puis proposons vos créneaux de visite. 24 demandes de visite préqualifiées en 90 jours.",
+   "description": "Mise en place en 5 jours",
+   "statiques": [
+    {"format": "Panneau de chantier sur une clôture", "accroche": "Le budget, avant de prendre la route.", "titre": "24 demandes de visite en 90 jours"},
+    {"format": "Photo du métier avec carte d'offre", "accroche": "Il a annoncé son budget avant votre visite.", "titre": "Budget annoncé avant la visite"},
+    {"format": "Fiche de demande, exemple", "accroche": "Budget, délai, commune : tout est sur la fiche.", "titre": "Demandes de visite préqualifiées"},
+    {"format": "Photo de camionnette en plein jour", "accroche": "Moins de visites pour rien.", "titre": "Vos créneaux, vos secteurs"}
+   ]
+  },
+  {
+   "cle": "P2",
+   "titre": "Les visites regroupées par secteur",
+   "gagnant_de_depart": "N204-objet-porteur",
+   "hypothese": "Le déplacement coûte plus cher que la visite : regrouper les demandes par commune parle à l'entreprise qui tourne avec une seule équipe.",
+   "texte_principal": "Vos visites de la semaine, regroupées par secteur. Nous recevons les demandes des propriétaires de votre zone, vérifions la commune et le budget, puis proposons les créneaux que vous ouvrez pour chaque secteur. 24 demandes de visite préqualifiées en 90 jours.",
+   "description": "Mise en place en 5 jours",
+   "statiques": [
+    {"format": "Carte du secteur avec trois points", "accroche": "Trois visites, une seule tournée.", "titre": "Vos visites par secteur"},
+    {"format": "Agenda de la semaine rempli", "accroche": "Jeudi : trois jardins dans la même commune.", "titre": "24 demandes de visite en 90 jours"},
+    {"format": "Panneau de chantier sur une clôture", "accroche": "Le prochain jardin est à 5 minutes.", "titre": "Demandes de visite préqualifiées"},
+    {"format": "Note de téléphone", "accroche": "Tournée de jeudi : déjà trois visites.", "titre": "Moins de route, plus de devis"}
+   ]
+  },
+  {
+   "cle": "P3",
+   "titre": "La garantie des 24 demandes",
+   "gagnant_de_depart": "N201-carte-typographique",
+   "hypothese": "La carte typographique a été la deuxième image de la niche : l'offre seule, chiffrée et garantie, parle à celui qui compare.",
+   "texte_principal": "24 demandes de visite préqualifiées en 90 jours, ou 150 € remboursés par demande manquante. L'engagement est écrit avant de commencer. Budget publicitaire en plus, réglé directement à Meta.",
+   "description": "Garanties ou remboursées",
+   "statiques": [
+    {"format": "Carte typographique", "accroche": "24 demandes de visite préqualifiées.", "titre": "Garanties ou remboursées"},
+    {"format": "Aplat de couleur", "accroche": "Garanties ou remboursées.", "titre": "24 demandes de visite en 90 jours"},
+    {"format": "Certificat de garantie avec sceau", "accroche": "L'engagement écrit avant de commencer.", "titre": "150 € par demande manquante"},
+    {"format": "Question frontale", "accroche": "Et s'il manque des demandes ?", "titre": "Le recours est écrit"}
+   ]
+  }
+ ]
+}

@@ -139,5 +139,9 @@
   "N101-carte-typographique",
   "N102-aplat-couleur"
  ],
- "variantes_performance_en_pause": false
+ "variantes_performance_en_pause": false,
+ "formulaire_intro": {
+  "titre": "40 demandes d'essai préqualifiées en 90 jours",
+  "texte": "Deux questions sur votre club, puis réservez votre étude de 30 minutes dans notre calendrier."
+ }
 }

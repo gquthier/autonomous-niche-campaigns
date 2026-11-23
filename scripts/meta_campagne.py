@@ -14,6 +14,7 @@ Ordre conseillé :
   campagne        crée la campagne ABO (en pause)
   adsets          crée un ad set par niche (budget du projet, ciblage large, en pause)
   formulaires     crée les formulaires de base par l'API (questions, page de fin), sans logique
+                  --nouvelle-version : après un changement de formulaire.nom, recrée la base (l'ancienne reste notée et en ligne)
   logique         lance l'éditeur de Meta dans le navigateur pour chaque niche : copie du formulaire de base, logique conditionnelle, deux pages de fin
   trouver         retrouve les formulaires finaux par leur nom exact et les note (--ecrire)
   images          envoie les créatives finales (creatives/final/*.jpg) dans la bibliothèque du compte
@@ -186,12 +187,21 @@ def formulaires(c):
     f = P["formulaire"]
     if not (E.get("campagne") and all(n["cle"] in E["adsets"] for n in c.NICHES)):
         print("ATTENTION : campagne ou ad sets pas encore créés, les liens de réservation n'auront pas utm_id / utm_term (recommandé : campagne puis adsets d'abord)")
+    noms = E.setdefault("noms_formulaires", {})
     for n in c.NICHES:
-        if n["cle"] in E["formulaires_base"]:
-            print("déjà créé :", P.nom_formulaire(n, base=True))
-            continue
+        k = n["cle"]
+        if k in E["formulaires_base"]:
+            if "--nouvelle-version" not in c.opts or noms.get(E["formulaires_base"][k]) == P.nom_formulaire(n, base=True):
+                print("déjà créé :", P.nom_formulaire(n, base=True))
+                continue
+            # Nouvelle version (nouveau formulaire.nom) : l'ancienne reste notée, et reste en ligne tant que des publicités l'utilisent.
+            if any(x["name"] == P.nom_formulaire(n, base=True) for x in M.formulaires()):
+                raise SystemExit(f"un formulaire actif s'appelle déjà « {P.nom_formulaire(n, base=True)} » : change formulaire.nom avant --nouvelle-version")
+            E.setdefault("formulaires_precedents", {}).setdefault(k, []).append({"base": E["formulaires_base"].pop(k), "final": E["formulaires"].pop(k, None)})
+            P.sauver()
         r = n["resume"]
         t = textes_pub(P, n)
+        intro = r.get("formulaire_intro") or {}   # promesse propre au formulaire (ex. vague CBO), sinon celle des publicités
 
         def options(vals):
             return [{"value": v, "key": slug(v)} for v in vals]
@@ -202,13 +212,14 @@ def formulaires(c):
                                 {"type": "CUSTOM", "key": "chiffre_affaires", "label": r.get("formulaire_q2") or f.get("question_ca", "Quel est votre chiffre d'affaires annuel ?"),
                                  "options": options(r.get("formulaire_q2_options") or f["tranches_ca"])},
                                 {"type": "EMAIL"}, {"type": "FULL_NAME"}, {"type": "PHONE"}],
-                     context_card={"title": t["card_title"], "style": "PARAGRAPH_STYLE", "content": [t["card"]]},
+                     context_card={"title": intro.get("titre", t["card_title"]), "style": "PARAGRAPH_STYLE", "content": [intro.get("texte", t["card"])]},
                      privacy_policy={"url": f["lien_confidentialite"], "link_text": f.get("texte_confidentialite", "Politique de confidentialité")},
                      follow_up_action_url=P.lien_reservation(n),
                      thank_you_page={"title": fin["titre"], "body": fin["texte"], "button_text": fin["bouton"], "button_type": "VIEW_WEBSITE", "website_url": P.lien_reservation(n)},
                      question_page_custom_headline=f.get("entete_questions", "Deux questions, puis réservez votre étude dans notre calendrier."),
                      block_display_for_non_targeted_viewer=True, is_optimized_for_quality=False)
         E["formulaires_base"][n["cle"]] = ok(res, f"formulaire {n['cle']}", P)["id"]
+        noms[E["formulaires_base"][n["cle"]]] = P.nom_formulaire(n, base=True)
         P.sauver()
         print("formulaire de base", n["cle"], E["formulaires_base"][n["cle"]], P.nom_formulaire(n, base=True))
 

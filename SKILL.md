@@ -1,6 +1,6 @@
 ---
 name: autonomous-niche-campaigns
-description: Machine d'acquisition par niche de métier pour une agence de génération de prospects, de A à Z. Pour chaque niche, étude du marché et des concurrents (Bibliothèque publicitaire Meta), offre « Plein 90 » (prix unique payé au départ, garantie au prorata, bonus 100 % numériques), présentation commerciale de 15 pages façon Hormozi, 10 créatives statiques bas de funnel GPT Image (lumineuses, offre au centre, cible nommée) + 2 variantes « Payé à la performance ». Puis un formulaire instantané Meta qui qualifie sur le chiffre d'affaires par logique conditionnelle (sous le seuil, même page de fin mais aucun prospect compté), une campagne ABO à un ad set par niche déployée par l'API, tout en pause, et une séquence de 6 e-mails de relance par niche. Utilise ce skill dès qu'on parle de lancer des campagnes Meta ou Facebook Ads sur plusieurs niches, de formulaire instantané qualifiant, d'instant form, de « logique conditionnelle », de qualifier les prospects sur le chiffre d'affaires, de créatives bas de funnel, d'offre par niche, de « déployer les campagnes avec mon token Meta », d'ajouter une niche ou des ad sets à une campagne qui tourne, même si la personne n'en demande qu'un morceau (seulement les créatives, seulement le formulaire, seulement les e-mails). Pour des pubs vidéo ou pour basculer une campagne existante vers un formulaire, utilise plutôt autonomous-meta-launch.
+description: Machine d'acquisition par niche de métier pour une agence de génération de prospects, de A à Z. Pour chaque niche, étude du marché et des concurrents (Bibliothèque publicitaire Meta), offre « Plein 90 » (prix unique payé au départ, garantie au prorata, bonus 100 % numériques), présentation commerciale de 15 pages façon Hormozi, 10 créatives statiques bas de funnel GPT Image (lumineuses, offre au centre, cible nommée) + 2 variantes « Payé à la performance ». Puis un formulaire instantané Meta qui qualifie sur le chiffre d'affaires par logique conditionnelle (sous le seuil, même page de fin mais aucun prospect compté), une campagne ABO à un ad set par niche déployée par l'API, tout en pause, et une séquence de 6 e-mails de relance par niche. Après une semaine, le passage à une CBO par niche, avec trois ad sets pour trois angles construits sur les annonces gagnantes de l'ABO, 4 à 8 statiques en 4:5 et 9:16, la copy de chaque annonce, des scripts vidéo de 30, 60 et 90 s et des formulaires refaits. Rien n'est dit « fait » sans une preuve relue dans le compte. Utilise ce skill dès qu'on parle de lancer des campagnes Meta ou Facebook Ads sur plusieurs niches, de formulaire instantané qualifiant, d'instant form, de « logique conditionnelle », de qualifier les prospects sur le chiffre d'affaires, de créatives bas de funnel, d'offre par niche, de « déployer les campagnes avec mon token Meta », d'ajouter une niche ou des ad sets à une campagne qui tourne, de passer de l'ABO à la CBO, de nouveaux angles par niche, de vérifier que tout est bien dans le gestionnaire de pubs, même si la personne n'en demande qu'un morceau (seulement les créatives, seulement le formulaire, seulement les e-mails). Pour des pubs vidéo ou pour basculer une campagne existante vers un formulaire, utilise plutôt autonomous-meta-launch.
 ---
 
 # Campagnes par niche : de l'étude à la campagne Meta qui tourne
@@ -17,6 +17,7 @@ Il complète [autonomous-meta-launch](https://github.com/gquthier/autonomous-met
 4. **Aucun chiffre inventé** : prix, seuil, volume, cas client, prix « ailleurs ». Tout vient de `projet.json → offre`, de `resume.json` ou d'une source écrite dans `analyse.md`.
 5. **`_meta/etat.json` est privé** : il contient des identifiants de compte. Le dossier de travail ne se versionne pas dans un dépôt public.
 6. **Si un contrôle s'arrête, corrige la cause.** Ne contourne pas un `ARRÊT` ni une erreur de `spec_check.py` ou de `verifier.py`.
+7. **« Prêt en local » n'est pas « dans le compte ».** Après chaque création dans Meta, relis l'état réel par l'API. Ne dis « c'est fait » qu'avec la preuve écrite par le contrôle : `controle` pour l'ABO, `cbo.py lire` puis `verifier` (`_meta/push-verified.json`) pour la CBO.
 
 ## Ce qu'il faut avant de commencer
 
@@ -43,8 +44,9 @@ Ne pose à la personne que les questions qui lui reviennent : le prix et la gara
 | 7 | Campagne, ad sets, formulaires | `references/campagne.md`, `references/formulaire.md` | tout **en pause** | `meta_campagne.py regles`, `campagne`, `adsets`, `formulaires`, `logique`, `trouver`, `images`, `pubs`, `controle` |
 | 8 | Séquence e-mail | `references/sequence-email.md` | `sequences-email/sequence-formulaire.json` + `.md` | agents, `scripts/sequences/verifier.py` |
 | 9 | Lancement | `references/campagne.md` (« Activer ») | campagne active | `meta_campagne.py activer --oui`, seulement sur accord explicite |
+| 10 | Passage en CBO, après une semaine | `references/cbo.md` | `cbo/annonces.csv`, statiques 4:5 + 9:16, scripts vidéo, formulaires v2, `_meta/push-verified.json` | `cbo.py gagnants`, `grille`, `apercu`, `lire`, `verifier` ; `meta_campagne.py formulaires --nouvelle-version`, `logique` |
 
-Lis `references/pieges.md` une fois avant l'étape 5 : il évite les erreurs déjà payées une fois.
+Lis `references/pieges.md` une fois avant l'étape 5, et sa section « Passage en CBO » avant l'étape 10 : il évite les erreurs déjà payées une fois.
 
 ### La simulation
 
@@ -78,6 +80,7 @@ La simulation écrit dans `_meta/etat.dry-run.json` et `_meta/monde.dry-run.json
 
   Son accord vaut pour cette campagne et ce budget, pas pour un lot ajouté plus tard.
 - **Avant d'ouvrir les e-mails** : la relecture des 6 e-mails de chaque niche (`sequences.md`).
+- **Avant de publier les formulaires de la CBO** : ce que deviennent ceux qui sont sous le seuil (`cbo.non_qualifies` : aucune trace, réservation marquée ou liste comptée par Meta), et la liste des anciennes annonces encore actives.
 
 ## La barre de qualité (ce qui a été validé, ce qui a été refusé)
 
@@ -100,6 +103,12 @@ La simulation écrit dans `_meta/etat.dry-run.json` et `_meta/monde.dry-run.json
   - sous le seuil, la même page de fin avec le bouton de réservation, mais aucun prospect pour Meta ;
   - deux questions seulement, pour que ce soit rapide.
 - **Campagne** : une ABO, un ad set par niche, ciblage large, Facebook + Instagram, aucune amélioration automatique sur les créatives. Tout est créé en pause.
+- **CBO** (après une semaine) :
+  - une campagne par niche, budget de campagne, un ad set par angle (trois au moins) ;
+  - chaque angle part d'une famille visuelle gagnante et teste un argument bas de funnel ;
+  - 4 à 8 statiques par angle, chacune en 4:5 et 9:16 ;
+  - la même promesse mot pour mot dans l'annonce et le formulaire ;
+  - tout en pause, et un `push-verified.json` avant de dire que c'est dans le compte.
 - **E-mails** : courts, humains, un seul lien, aucun chiffre inventé, aucun prix, aucune fausse urgence. Ils s'arrêtent dès que la personne réserve ou répond.
 - **Partout** : jamais de prix, de seuil, de chiffre ou de cas client inventé. Les phrases de garantie restent à faire valider par un avocat : signale-le à chaque livraison.
 
@@ -112,12 +121,20 @@ La simulation écrit dans `_meta/etat.dry-run.json` et `_meta/monde.dry-run.json
   2. reporte le changement dans chaque `resume.json`, présentation et e-mail ;
   3. régénère les images qui portent l'ancienne phrase (`variantes.py` sait remplacer une phrase dans une image existante) ;
   4. relance `images` puis `pubs`, qui mettent à jour les publicités existantes.
-- **Formulaire à refaire** : un nouveau nom dans `formulaire.nom` (par exemple « IF - {label} v2 »), puis `formulaires`, `logique`, `pubs`. Liste les publicités qui utilisent l'ancien formulaire (`usage`) avant d'archiver quoi que ce soit.
+- **Formulaire à refaire** :
+  1. la nouvelle intro dans `resume.json → formulaire_intro` ;
+  2. un nouveau nom dans `formulaire.nom` (par exemple « IF - {label} v2 ») ;
+  3. `formulaires <niche> --nouvelle-version`, puis `logique`, puis `pubs` (en ABO) ;
+  4. le test de chaque tranche en aperçu.
+
+  Liste les publicités qui utilisent l'ancien formulaire (`usage`) avant d'archiver quoi que ce soit.
+- **Passer en CBO** : `references/cbo.md`, de la lecture des gagnants à la preuve `push-verified`.
 
 ## Rendre compte
 
 À la fin, en quelques lignes :
-- ce qui est en ligne (campagne, budget par jour, nombre de publicités relu par statut) ;
+- ce qui est en ligne (campagne, budget par jour, nombre de publicités relu par statut), d'après `controle` ou `_meta/push-verified.json` du jour, jamais de mémoire ;
+- les anciennes publicités encore actives, avec leur formulaire ;
 - ce qui est prêt mais fermé ;
 - les choix faits sans la personne (profils de « Vous êtes ? », formats d'images retenus) ;
 - les points à trancher (avocat, calendrier, ouverture des e-mails) ;

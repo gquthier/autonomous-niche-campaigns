@@ -203,7 +203,7 @@ class FauxMeta:
         if path == f"{self.page}/leadgen_forms":
             qs = [{"key": q.get("key", q["type"].lower()), "label": q.get("label", q["type"]), "type": q["type"], "options": q.get("options", [])}
                   for q in p.get("questions", [])]
-            return self._creer("form", name=p["name"], status="ACTIVE", questions=qs)
+            return self._creer("form", name=p["name"], status="ACTIVE", questions=qs, context_card=p.get("context_card"))
         if path == f"{self.act}/adcreatives":
             return self._creer("creative", name=p.get("name"), object_story_spec=p.get("object_story_spec", {}))
         if path == f"{self.act}/ads":

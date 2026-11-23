@@ -41,5 +41,9 @@
   "Nouvelle demande de visite",
   "Visite confirmée",
   "Visite confirmée"
- ]
+ ],
+ "formulaire_intro": {
+  "titre": "24 demandes de visite préqualifiées en 90 jours",
+  "texte": "Deux questions sur votre entreprise, puis réservez votre étude de 30 minutes dans notre calendrier."
+ }
 }

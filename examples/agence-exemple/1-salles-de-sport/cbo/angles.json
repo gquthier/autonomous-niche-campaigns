@@ -1,0 +1,52 @@
+{
+ "_lire": "Exemple fictif. Après une semaine d'ABO, le dirigeant (fictif) a décidé de garantir des demandes d'essai préqualifiées au lieu d'essais tenus : l'annonce et le formulaire doivent le dire à l'identique, et plus aucun texte ne doit parler d'« essais tenus ». Chaque angle garde une famille visuelle qui a gagné dans l'ABO (cbo.py gagnants) et teste un argument nouveau.",
+ "code": "F",
+ "promesse": "40 demandes d'essai préqualifiées en 90 jours",
+ "expressions_interdites": ["essais tenus", "essais encadrés tenus"],
+ "angles": [
+  {
+   "cle": "F1",
+   "titre": "Le nouveau venu attendu à l'accueil",
+   "gagnant_de_depart": "N103-photo-metier",
+   "hypothese": "Le gérant se voit accueillir un habitant du quartier qui a déjà choisi son créneau : la photo du coach à l'accueil a porté la niche dans l'ABO.",
+   "texte_principal": "Salles de sport : un habitant du quartier remplit le formulaire, choisit son créneau d'essai, et votre coach sait qui arrive. Nous trouvons ces demandes, vérifions la zone et la disponibilité, puis proposons vos créneaux. 40 demandes d'essai préqualifiées en 90 jours.",
+   "texte_court": "Votre coach sait qui arrive. 40 demandes d'essai préqualifiées en 90 jours.",
+   "description": "Mise en place en 5 jours",
+   "statiques": [
+    {"format": "Photo du métier avec carte d'offre", "accroche": "Il a déjà choisi son créneau d'essai.", "titre": "40 demandes d'essai en 90 jours"},
+    {"format": "Photo de l'accueil, vue de dos", "accroche": "Votre coach sait qui arrive à 18 h.", "titre": "Des demandes de votre quartier"},
+    {"format": "Photo du métier avec étiquette de cible", "accroche": "Salles de sport : le prochain essai vient du quartier.", "titre": "Demandes d'essai préqualifiées"},
+    {"format": "Photo plein cadre, phrase en bas", "accroche": "Un essai réservé, pas un simple clic.", "titre": "Zone et créneau vérifiés"}
+   ]
+  },
+  {
+   "cle": "F2",
+   "titre": "Les heures creuses remplies",
+   "gagnant_de_depart": "N108-agenda-semaine",
+   "hypothese": "L'agenda rempli a été la deuxième image de la niche : le gérant pense en créneaux à remplir, pas en contacts.",
+   "texte_principal": "Vos heures creuses peuvent accueillir des séances d'essai. Nous diffusons vos annonces dans votre zone, vérifions chaque demande et proposons d'abord les créneaux que vous voulez remplir. 40 demandes d'essai préqualifiées en 90 jours.",
+   "description": "Mise en place en 5 jours",
+   "statiques": [
+    {"format": "Agenda de la semaine rempli", "accroche": "Mardi 14 h : un essai de plus.", "titre": "Remplissez vos heures creuses"},
+    {"format": "Note de téléphone", "accroche": "Créneaux à remplir cette semaine.", "titre": "40 demandes d'essai en 90 jours"},
+    {"format": "Écran de réservation", "accroche": "Nouvelle demande d'essai : jeudi 10 h.", "titre": "Vos créneaux proposés en premier"},
+    {"format": "Planning mural écrit au marqueur", "accroche": "Les heures creuses d'abord.", "titre": "Demandes d'essai préqualifiées"}
+   ]
+  },
+  {
+   "cle": "F3",
+   "titre": "La garantie des 40 demandes",
+   "gagnant_de_depart": "N101-carte-typographique",
+   "hypothese": "La carte typographique et sa variante ont porté l'offre seule : le gérant qui compare veut le volume, le délai et le recours écrits.",
+   "texte_principal": "40 demandes d'essai préqualifiées en 90 jours, ou 90 € remboursés par demande manquante. L'engagement est écrit avant de commencer. Budget publicitaire en plus, réglé directement à Meta.",
+   "texte_long": "Salles de sport : 40 demandes d'essai préqualifiées en 90 jours, ou 90 € remboursés par demande manquante, ou 45 jours de plus sans frais. Une demande compte si la personne habite votre zone, est majeure et a choisi un créneau. L'engagement est écrit avant de commencer. Budget publicitaire en plus, réglé directement à Meta.",
+   "description": "Garanties ou remboursées",
+   "statiques": [
+    {"format": "Carte typographique", "accroche": "40 demandes d'essai préqualifiées.", "titre": "Garanties ou remboursées"},
+    {"format": "Aplat de couleur", "accroche": "Garanties ou remboursées.", "titre": "40 demandes d'essai en 90 jours"},
+    {"format": "Certificat de garantie avec sceau", "accroche": "L'engagement écrit avant de commencer.", "titre": "90 € par demande manquante"},
+    {"format": "Question frontale", "accroche": "Et s'il manque des demandes ?", "titre": "Le recours est écrit"}
+   ]
+  }
+ ]
+}

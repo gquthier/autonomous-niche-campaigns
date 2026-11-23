@@ -66,6 +66,15 @@ L'éditeur reste ouvert sur la copie. Lire le message d'arrêt, regarder l'état
 - Changer de formulaire = nouvelles créatives Meta : `pubs` le fait seul (la clé de créative contient l'identifiant du formulaire) et met à jour les publicités existantes.
 - Un agent qui pilote l'écran à la souris a su trouver le chemin des menus, mais il s'arrête dès que la personne touche au navigateur et perd la fenêtre : le pilotage par JavaScript (`editeur/`) est plus fiable. Ne pas montrer de fenêtre de test devant la personne sans la prévenir.
 
+## Refaire un formulaire (nouvelle version)
+
+Un formulaire publié ne se modifie plus. Pour une nouvelle offre, une nouvelle promesse ou la vague CBO (`cbo.md`) :
+
+1. Écris la nouvelle intro dans `resume.json → formulaire_intro` (`titre`, `texte`). Sans elle, l'intro reprend la carte des publicités (`textes_pub`).
+2. Donne un nouveau nom dans `formulaire.nom`, par exemple « IF - {label} - CBO ».
+3. Lance `meta_campagne.py <projet> formulaires <niche> --nouvelle-version`, puis `logique <niche>` et `trouver --ecrire`. L'ancienne version reste notée dans `formulaires_precedents` et reste en ligne. Une relance ne recrée rien. Si un formulaire actif porte déjà le nouveau nom, le script refuse.
+4. Teste chaque tranche dans l'aperçu (`cbo.py apercu`) avant de brancher des publicités dessus.
+
 ## Relire un formulaire déjà publié
 
 Pour vérifier la langue, les libellés et les tranches d'un formulaire avant d'y diriger des publicités existantes, utilise `lead_form.py check-form` du dépôt [autonomous-meta-launch](https://github.com/gquthier/autonomous-meta-launch) : il s'arrête sur des tranches qui se chevauchent ou un formulaire en anglais. Un formulaire publié ne se modifie plus : duplique-le et corrige la copie.

@@ -8,11 +8,12 @@
 
 L'étude des concurrents, l'offre, la présentation et dix créatives par niche.<br>
 Un formulaire instantané qui écarte les petits comptes sans les compter comme prospects.<br>
-Une campagne ABO à un ad set par niche, créée en pause, et six e-mails de relance.
+Une campagne ABO à un ad set par niche, créée en pause, et six e-mails de relance.<br>
+Puis une CBO par niche, trois angles tirés des annonces gagnantes, et la preuve relue dans le compte avant de dire « fait ».
 
 **[Installer le skill](#installation)** · **[Lire le playbook](SKILL.md)** · **[Voir le formulaire qualifiant](references/formulaire.md)**
 
-<sub>Claude Code · Bibliothèque publicitaire · offre « Plein 90 » · 10 créatives GPT Image + 2 variantes · logique conditionnelle sur le chiffre d'affaires · ABO un ad set par niche · 6 e-mails contrôlés · simulation complète sans clé · MIT</sub>
+<sub>Claude Code · Bibliothèque publicitaire · offre « Plein 90 » · 10 créatives GPT Image + 2 variantes · logique conditionnelle sur le chiffre d'affaires · ABO un ad set par niche · CBO trois angles par niche · preuve push-verified · 6 e-mails contrôlés · simulation complète sans clé · MIT</sub>
 
 <br><br>
 
@@ -40,6 +41,12 @@ Ce skill donne à un agent de code le chemin complet, niche par niche, avec des 
 - **Un formulaire instantané qui qualifie.** « Vous êtes ? », puis le chiffre d'affaires. Sous le seuil, la personne voit la même page de fin et peut réserver, mais Meta ne compte aucun prospect, et l'algorithme n'apprend pas à chercher ce profil. L'API ne sait pas poser cette logique : un éditeur piloté dans votre navigateur le fait, vérifie chaque règle, puis publie.
 - **Une campagne ABO, un ad set par niche.** Ciblage large, Facebook et Instagram, aucune amélioration automatique sur les créatives. Tout est créé en pause, chaque identifiant est noté dès que Meta le renvoie, et une relance ne recrée rien.
 - **Six e-mails de relance par niche.** Un contrôle refuse un prix, une fausse urgence, un faux « Re: », et tout nombre introuvable dans les sources de la niche.
+- **Le passage en CBO, après une semaine.**
+  - On lit les résultats de l'ABO annonce par annonce, et chaque niche devient une campagne CBO à trois ad sets.
+  - Un ad set = un angle bas de funnel, bâti sur une famille visuelle qui a gagné.
+  - 4 à 8 statiques par angle, en 4:5 et en 9:16, avec la copy complète de chaque annonce dans un CSV et un script vidéo face caméra par angle.
+  - Les formulaires sont refaits, avec la même promesse que les annonces, et chaque tranche de chiffre d'affaires est testée en aperçu.
+  - Un contrôle relit le compte par l'API. Il n'écrit la preuve `push-verified.json` que si tout y est.
 
 L'activation est la dernière étape. Elle exige `--oui`, donc l'accord explicite de la personne.
 
@@ -55,6 +62,7 @@ L'activation est la dernière étape. Elle exige `--oui`, donc l'accord explicit
 | Formulaire instantané à logique conditionnelle | Non | Oui, par l'éditeur Meta |
 | Recopier une campagne existante vers un formulaire | Oui | Non |
 | Structure ABO, un ad set par niche | Non | Oui |
+| Passage en CBO, un ad set par angle, preuve relue dans le compte | Non | Oui |
 | Reprise après interruption | Oui | Oui, `_meta/etat.json` |
 | Séquence e-mail contrôlée | Non | Oui |
 | Simulation sans clé | Oui | Oui |
@@ -137,6 +145,35 @@ En réel, sur votre dossier de travail (hors du dépôt), dans l'ordre :
 | `meta_campagne.py images`, `pubs`, `controle` | Publicités dans les ad sets en pause, puis relecture |
 | `meta_campagne.py activer --oui` | Active les ad sets, puis la campagne en dernier |
 | `sequences/verifier.py` | Contrôle les six e-mails de chaque niche |
+| `cbo.py gagnants` | Une semaine plus tard : les annonces de l'ABO qui portent chaque niche |
+| `cbo.py grille` | La CBO attendue et sa copy, une ligne par annonce (`cbo/annonces.csv`) |
+| `meta_campagne.py formulaires --nouvelle-version`, `logique` | Les formulaires de la CBO, avec la nouvelle promesse |
+| `cbo.py apercu` | Les parcours à tester dans l'aperçu de chaque formulaire, et le relevé à remplir |
+| `cbo.py lire`, `verifier` | Relit le compte, compare, écrit `_meta/push-verified.json` seulement si tout y est |
+
+### Passer en CBO
+
+Après une semaine d'ABO, le même exemple fictif passe en CBO : trois angles par niche, quatre statiques par angle. La simulation rejoue aussi les erreurs vues sur un vrai compte :
+
+```bash
+python3 scripts/cbo.py examples/agence-exemple gagnants
+python3 scripts/cbo.py examples/agence-exemple grille
+python3 scripts/cbo.py examples/agence-exemple lire --dry-run --pieges
+python3 scripts/cbo.py examples/agence-exemple verifier --dry-run
+```
+
+```text
+ATTENTION : 3 publicité(s) active(s) hors de la nouvelle structure, encore sur l'ancienne offre : IF - Salles de sport (3) : ...
+ERREUR : « IF - Salles de sport - CBO » : l'intro ne dit pas la promesse des annonces « 40 demandes d'essai préqualifiées en 90 jours » ...
+ERREUR : « IF - Salles de sport - CBO » : mots sans accent : Derniere → dernière, etape → étape, reservez → réservez, ...
+ERREUR : « IF - Salles de sport - CBO » : réponse « Moins de 150 000 € » → prospect en aperçu, attendu non_prospect_avec_reservation ...
+ERREUR : « IF - Salles de sport - CBO » : le lien de confidentialité ouvre l'accueil du site ...
+ERREUR : « Instant Form - CBO | Salles de sport » : ad set « Agence Exemple | F2 | Les heures creuses remplies » absent (4 annonces attendues)
+ERREUR : campagne absente du compte : « Instant Form - CBO | Paysagistes » (12 annonces attendues, aucune en ligne)
+NON VÉRIFIÉ : 9 écart(s). Ne dis pas que c'est fait. Corrige, relance `lire`, puis `verifier`.
+```
+
+Sans `--pieges`, la même vérification passe : `VÉRIFIÉ : 24 annonces conformes`. Le détail est dans [le passage en CBO](references/cbo.md).
 
 L'étude, l'offre et la présentation sont faites par des agents, une niche par agent, en suivant les fichiers de [`references/`](references/). Le détail est dans [le playbook](SKILL.md), les écueils dans [les pièges](references/pieges.md).
 
@@ -150,7 +187,11 @@ L'étude, l'offre et la présentation sont faites par des agents, une niche par 
 - **Les règles juridiques citées ont été relevées en France en novembre 2026.** La garantie, le rappel téléphonique et le paiement au résultat sont à faire valider par un avocat avant le premier client.
 - **L'envoi des e-mails n'est pas fourni.** Le dépôt écrit et contrôle la séquence. Branchez-la sur votre outil d'e-mailing, avec l'arrêt sur réservation ou réponse.
 - **Les noms de modèles et les tarifs de kie.ai évoluent.** Vérifiez le modèle dans `scripts/creatives/kie.py` et le solde avant de lancer plusieurs niches.
-- **L'exemple est fictif** : agence, niches, prix, volumes, concurrents et e-mails sont inventés pour montrer le format.
+- **La CBO n'est pas créée par un script de ce dépôt.** L'agent la crée par l'API en suivant [`references/cbo.md`](references/cbo.md), qui donne les champs qui ont marché. `cbo.py` construit la grille, relit le compte et vérifie. `cbo.py lire` n'a pas tourné contre la vraie API sous sa forme publiée. Il généralise les lectures faites sur un vrai compte en novembre 2026.
+- **La logique conditionnelle ne se lit pas par l'API.** Le contrôle repose sur un relevé d'aperçu rempli par une personne ou un agent. `verifier` exige qu'il soit complet, fait sur la bonne version et conforme. Il ne peut pas savoir si le relevé ment.
+- **Le contrôle des accents attrape les oublis courants, pas tous.** La relecture mot à mot de chaque écran reste obligatoire.
+- **Une semaine d'ABO donne peu de prospects par niche.** `gagnants` désigne des familles visuelles à garder, pas une preuve statistique. Il compte des formulaires envoyés, pas des rendez-vous tenus.
+- **L'exemple est fictif** : agence, niches, prix, volumes, concurrents, angles, résultats de l'ABO et e-mails sont inventés pour montrer le format.
 
 ## Licence
 

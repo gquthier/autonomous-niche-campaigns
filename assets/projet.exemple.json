@@ -70,6 +70,30 @@
    44
   ]
  },
+ "cbo": {
+  "_lire": "Passage de l'ABO à la CBO (references/cbo.md) : une campagne par niche, un ad set par angle, 4 à 8 statiques par angle en 4:5 et 9:16. Angles et copy de chaque niche : <niche>/cbo/angles.json. non_qualifies se décide AVANT de publier : sans_trace, reservation_marquee ou liste.",
+  "campagne_nom": "Instant Form - CBO | {label}",
+  "budget_jour_par_campagne": 30,
+  "adset_nom": "{agence} | {angle} | {titre}",
+  "formulaire_nom": "IF - {label} - CBO",
+  "angles_min": 3,
+  "statiques_min": 4,
+  "statiques_max": 8,
+  "formats": {
+   "4x5": [
+    1080,
+    1350
+   ],
+   "9x16": [
+    1080,
+    1920
+   ]
+  },
+  "bouton": "En savoir plus",
+  "non_qualifies": "reservation_marquee",
+  "fraicheur_minutes": 60,
+  "accents_permis": []
+ },
  "creatives": {
   "kie_key_var": "KIE_API_KEY",
   "par_niche": 10,

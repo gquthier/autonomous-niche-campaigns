@@ -2,6 +2,8 @@
 
 Ce fichier couvre la structure propre à ce skill : **une campagne ABO, un ad set par niche, des publicités image vers le formulaire qualifiant de la niche**. Pour des publicités vidéo, une conversion sur page merci ou le passage d'une campagne existante vers un formulaire, utilise [autonomous-meta-launch](https://github.com/gquthier/autonomous-meta-launch).
 
+Après une semaine, lis les résultats par annonce et passe à une CBO par niche, un ad set par angle : voir `cbo.md`.
+
 ## Structure validée
 
 - **Une seule campagne large en ABO** (`campagne.nom`, objectif prospects, enchère au plus bas coût), **un ad set par niche** au budget `campagne.budget_jour_par_niche`. Pas une campagne par niche : le dirigeant a corrigé ce point, l'ABO garde le budget de chaque niche fixe et lisible, et chaque niche se coupe sans toucher aux autres.
