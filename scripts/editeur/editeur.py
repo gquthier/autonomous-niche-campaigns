@@ -19,7 +19,7 @@ L = {
     "page_prospects": ["Page de fin pour les prospects", "End page for leads"],
     "publier": "Créer le formulaire",
     "apercu_debut": "Politique de confidentialité Envoyer",
-    "apercu_non_prospect": "Votre réponse ne sera pas envoyée",
+    "apercu_non_prospect": "Votre réponse ne sera pas envoyée", "envoyer_apercu": "Envoyer",
 }
 BUILDER = f'var d = H.dialogs().filter(function(x){{ return H.txt(x).indexOf({json.dumps(L["dialogue"])})===0; }})[0];'
 COMBOS = BUILDER + 'var c = H.all("[role=combobox]", d).filter(H.vis);'

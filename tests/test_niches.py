@@ -147,6 +147,46 @@ class Simulation(CopieDuProjet):
             if o["type"] in ("campaign", "adset"):
                 self.assertEqual(o["status"], "PAUSED", o["name"])
 
+    def test_options_texte_et_reprise_sans_dupliquer_les_publicites(self):
+        f = self.dir / "1-salles-de-sport" / "resume.json"
+        resume = json.loads(f.read_text())
+        tv = {champ: [f"Texte fictif {champ} {i}" for i in range(5)] for champ in ("bodies", "titles", "descriptions")}
+        resume["textes_variantes"] = tv
+        f.write_text(json.dumps(resume))
+        self.lancer("parcours", "--dry-run")
+        etat_path = self.dir / "_meta" / "etat.dry-run.json"
+        monde_path = self.dir / "_meta" / "monde.dry-run.json"
+        avant = json.loads(etat_path.read_text())
+        objets = json.loads(monde_path.read_text())["objets"]
+        for stem, creative in avant["creatives"]["salles-de-sport"].items():
+            obj = objets[creative["id"]]
+            if stem.endswith("-performance"):
+                self.assertNotIn("asset_feed_spec", obj)
+            else:
+                self.assertEqual(obj["asset_feed_spec"]["bodies"], [{"text": x} for x in tv["bodies"]])
+                self.assertEqual(obj["object_story_spec"]["link_data"]["message"], tv["bodies"][0])
+        resume["textes_variantes"]["bodies"][1] = "Option modifiée"
+        f.write_text(json.dumps(resume))
+        self.lancer("pubs", "--dry-run")
+        apres = json.loads(etat_path.read_text())
+        self.assertEqual(avant["pubs"], apres["pubs"], "les annonces gardent leur identité")
+        for stem, creative in avant["creatives"]["salles-de-sport"].items():
+            nouvelle = apres["creatives"]["salles-de-sport"][stem]
+            if stem.endswith("-performance"):
+                self.assertEqual(creative, nouvelle)
+            else:
+                self.assertNotEqual(creative["id"], nouvelle["id"])
+                objets = json.loads(monde_path.read_text())["objets"]
+                ad = objets[apres["pubs"]["salles-de-sport"][stem]]
+                self.assertEqual(ad["creative"]["creative_id"], nouvelle["id"])
+
+    def test_options_invalides_arretent_avant_creative(self):
+        n = self.projet().niche("salles-de-sport")
+        for tv in ({}, {"bodies": ["a"]}, {k: [""] for k in ("bodies", "titles", "descriptions")}, {k: ["a"] * 6 for k in ("bodies", "titles", "descriptions")}):
+            n["resume"]["textes_variantes"] = tv
+            with self.assertRaises(SystemExit):
+                meta_campagne.options_texte(n)
+
     def test_activer_exige_oui(self):
         self.lancer("parcours", "--dry-run")
         with self.assertRaises(SystemExit):

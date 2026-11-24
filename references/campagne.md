@@ -27,6 +27,14 @@ Après une semaine, lis les résultats par annonce et passe à une CBO par niche
 
 Titre : `{volume_garanti} {unite_courte} en {duree_jours} jours` ; description : la garantie courte. Pour une variante `-performance`, la garantie devient `offre.variante_performance`. Une niche hors modèle (garantie différente, cible sans volume) met un `texte_pub` complet dans son `resume.json`. **Toujours montrer les textes (`meta_campagne.py <projet> textes`) à la personne avant `pubs`.**
 
+## Options de texte sur une même image
+
+Quand plusieurs variantes sont demandées, `resume.json → textes_variantes` contient trois listes : `bodies`, `titles`, `descriptions`, chacune de 1 à 5 textes non vides. Par exemple, cinq formulations d'un même argument pour une salle de sport. Garder la promesse et la garantie validées dans chaque option ; ne pas inventer de preuve pour varier le texte.
+
+`textes` affiche toutes les options pour relecture. `pubs` conserve une image unique, met la première option dans `object_story_spec.link_data` et les listes dans `asset_feed_spec` (`optimization_type=DEGREES_OF_FREEDOM`). Les options n'affectent pas les variantes `-performance`, qui gardent leur texte distinct. La clé locale de créative comprend toutes les options : les modifier remplace la créative de la publicité existante, sans dupliquer l'annonce. Après création, relire `asset_feed_spec` et le formulaire par l'API pour vérifier que les options sont bien enregistrées.
+
+Ne lance pas deux écritures en parallèle dans le même `_meta/etat.json` : la logique des formulaires et l'envoi des images peuvent sinon perdre leurs identifiants respectifs. Les recherches et la production de fichiers par niche peuvent tourner en parallèle, avec un dossier distinct par agent.
+
 ## Ordre des étapes
 
 Commence toujours par la simulation complète, sans clé :

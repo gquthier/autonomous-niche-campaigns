@@ -140,6 +140,26 @@ def textes(c):
         t = textes_pub(c.P, n)
         tp = textes_pub(c.P, n, True)
         print(f"===== {n['label']}\nTITRE : {t['title']} | DESCRIPTION : {t['desc']}\n{t['body']}\nCARTE D'INTRO : {t['card_title']} | {t['card']}\n--- variante performance : {tp['desc']}\n")
+        tv = options_texte(n)
+        if tv:
+            for cle, valeurs in tv.items():
+                for i, texte in enumerate(valeurs, 1):
+                    print(f"OPTION {cle} {i} : {texte}")
+
+
+def options_texte(n):
+    """Options rédigées par niche : 1 à 5 textes non vides par champ."""
+    tv = n["resume"].get("textes_variantes")
+    if tv is None:
+        return None
+    champs = ("bodies", "titles", "descriptions")
+    if not isinstance(tv, dict) or set(tv) != set(champs):
+        raise SystemExit(f"{n['cle']} : textes_variantes attend bodies, titles et descriptions")
+    for cle in champs:
+        valeurs = tv[cle]
+        if not isinstance(valeurs, list) or not 1 <= len(valeurs) <= 5 or any(not isinstance(x, str) or not x.strip() for x in valeurs):
+            raise SystemExit(f"{n['cle']} : textes_variantes.{cle} attend 1 à 5 textes non vides")
+    return tv
 
 
 def regles(c):
@@ -289,19 +309,26 @@ def pubs(c):
             raise SystemExit(f"{k} : formulaire final ou ad set manquant (étapes logique + trouver --ecrire, adsets)")
         E["creatives"].setdefault(k, {})
         E["pubs"].setdefault(k, {})
+        variantes = options_texte(n)
         for stem in sorted(E["images"].get(k, {})):
             perf = stem.endswith("-performance")
             t = textes_pub(P, n, perf)
             img = E["images"][k][stem]
             label = f"{n['label']} · {stem}"
-            cle = f"{img['cle']}|{E['formulaires'][k]}|{hashlib.md5(json.dumps(t, sort_keys=True).encode()).hexdigest()[:10]}"
+            tv = variantes if not perf else None
+            contenu = [t, tv] if tv else t  # conserve les clés des publicités sans options
+            cle = f"{img['cle']}|{E['formulaires'][k]}|{hashlib.md5(json.dumps(contenu, sort_keys=True).encode()).hexdigest()[:10]}"
             if E["creatives"][k].get(stem, {}).get("cle") != cle:
                 spec = {"page_id": M.page, **({"instagram_user_id": M.ig} if M.ig else {}),
                         "link_data": {"image_hash": img["hash"], "link": "http://fb.me/", "message": t["body"], "name": t["title"], "description": t["desc"],
                                       "call_to_action": {"type": "LEARN_MORE", "value": {"lead_gen_form_id": E["formulaires"][k], "link": "http://fb.me/"}}}}
+                afs = {}
+                if tv:
+                    spec["link_data"].update(message=tv["bodies"][0], name=tv["titles"][0], description=tv["descriptions"][0])
+                    afs = {"asset_feed_spec": {**{champ: [{"text": x} for x in tv[champ]] for champ in tv}, "optimization_type": "DEGREES_OF_FREEDOM"}}
                 r = {"error": {"message": "aucun essai"}}
                 for extra in (SANS_AMELIO, {}):
-                    r = M.post(f"{M.act}/adcreatives", name=f"{P['agence']['nom']} {label}", object_story_spec=spec, **extra)
+                    r = M.post(f"{M.act}/adcreatives", name=f"{P['agence']['nom']} {label}", object_story_spec=spec, **afs, **extra)
                     if "error" not in r:
                         break
                     print("  créative refusée avec ces réglages :", str(r["error"].get("error_user_msg") or r["error"].get("message"))[:200], flush=True)

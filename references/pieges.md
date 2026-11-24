@@ -13,6 +13,7 @@ Lis ce fichier une fois avant l'étape des créatives : chacun de ces points a d
 
 ## Créatives
 
+- Deux agents ont écrit dans le même dossier de niche et écrasé des fichiers. Donner un dossier exclusif à chacun ; avant l'envoi, vérifier le nombre de visuels, leurs noms et leur contenu, pas seulement la présence du dossier.
 - GPT Image écrit parfois un mot en plus ou oublie un accent : `check.py` (OCR) sur chaque image, et regarder l'image en cas de « manque » sur un très gros titre (faux manque fréquent).
 - Le modèle ne dessine jamais le logo correctement : pied vide de 10 %, logo posé par `finish.py` seulement si le pied est vraiment vide.
 - Au-delà de 4 tâches en parallèle, kie.ai ralentit fortement ; une tâche relancée reprend par son `taskId` noté (aucun double paiement).
@@ -21,6 +22,8 @@ Lis ce fichier une fois avant l'étape des créatives : chacun de ces points a d
 
 ## Meta : API
 
+- La campagne mère peut être en pause avec d'anciens ad sets encore marqués actifs. Réactiver cette campagne relancerait ces anciens ensembles aussi : lire tous les enfants avant activation et, si la demande vise un lot séparé, préparer une campagne distincte en pause.
+- Plusieurs écritures simultanées dans le même état local peuvent s'écraser. Pendant la logique des formulaires, ne pas envoyer des images ou publier des annonces dans ce même projet ; attendre, puis relire les identifiants depuis le compte.
 - Limite de débit (codes 4, 17, 32, 613, 80004) : attendre et rejouer. Après beaucoup d'écritures, Meta refuse aussi les **lectures** un moment : une liste vide lue à ce moment-là n'est pas une liste vide. `lib/meta.py` rejoue ; ne jamais décider d'archiver ou de recréer sur une lecture faite pendant une limite.
 - Une erreur « An unexpected error has occurred » sur une mise à jour de publicité : relancer l'étape (elle ne refait que ce qui manque).
 - Une campagne ABO peut exiger `is_adset_budget_sharing_enabled=false` à la création (le script réessaie avec).
@@ -34,6 +37,8 @@ Lis ce fichier une fois avant l'étape des créatives : chacun de ces points a d
 
 ## Après la mise en ligne
 
+- Une nouvelle niche peut manquer dans le CRM même si son formulaire et ses annonces sont corrects. Avant activation, vérifier son classement et ses seuils avec une réservation de test, sans modifier les règles de qualification à la place du dirigeant.
+
 - **Le calendrier des pages de fin doit être reconnu par l'outil de l'équipe.** Cas réel : l'événement de calendrier des formulaires n'était pas rangé par le CRM, les réservations tombaient dans « à trier » sans confirmation ni suivi. Vérifier, avant d'activer, qu'une réservation de test arrive au bon endroit, et qu'elle ne déclenche pas un parcours prévu pour une autre cible.
 - Les non-qualifiés qui réservent n'existent que dans le calendrier (Meta ne transmet pas leurs coordonnées) : le dire à l'équipe.
 - Les relances e-mail ne partent que sur décision explicite de la personne après relecture des textes ; une séquence qui démarre pendant que l'envoi est fermé ne repart pas seule à l'ouverture.
@@ -41,6 +46,10 @@ Lis ce fichier une fois avant l'étape des créatives : chacun de ces points a d
 - **« C'est en ligne » se prouve par un envoi réel.** Une séquence déployée mais jamais déclenchée ressemble à une séquence qui tourne. Contrôler qu'une relance est vraiment partie pour chaque niche, depuis la bonne boîte, avec les textes de sa niche.
 - **Une réservation doit arrêter la relance, quelle que soit l'adresse.** Les prospects réservent souvent avec un autre e-mail que celui du formulaire : rapprocher par e-mail, puis téléphone, puis nom, sinon ils reçoivent « votre rendez-vous n'est pas confirmé » après avoir réservé.
 - **Les réponses doivent être lues par l'outil qui envoie.** Si la boîte d'envoi n'est pas reliée en lecture, un « stop » n'arrête rien. Brancher la lecture avant d'ouvrir l'envoi, et garder le lien de désinscription tant qu'elle ne marche pas.
+
+## Recherche interrompue par un quota
+
+Un quota mensuel Apify atteint peut interrompre toutes les recherches qui partagent ce compte. Marquer chaque niche « mesurée », « relevé partiel » ou « estimée » ; une réponse vide ou une erreur ne prouve pas l'absence de concurrents. Une recherche web peut compléter le dossier, sans être présentée comme un relevé direct de la Bibliothèque publicitaire. Signaler les autres workflows qui dépendent du même quota ; ne pas relever le plafond payant de sa propre initiative.
 
 ## Passage en CBO (novembre 2026)
 

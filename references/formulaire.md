@@ -56,6 +56,9 @@ L'éditeur reste ouvert sur la copie. Lire le message d'arrêt, regarder l'état
 
 ## Pièges rencontrés
 
+- Le dialogue de copie peut apparaître vingt secondes avant ses champs : attendre les champs puis vérifier le nom de la base, sans publier un éditeur vide. Après l'attente bornée, s'arrêter avec l'état de l'éditeur.
+- Le texte de confidentialité de l'aperçu peut devenir « Consultez la politique de confidentialité de <page>. Envoyer ». Le repère alternatif cherche « Envoyer » avant le titre de fin ; les contrôles des deux titres, des deux boutons et de la fin non-prospect restent identiques.
+- Un onglet endormi ou fermé pendant la saisie n'est pas une publication échouée à recréer aveuglément : rouvrir un onglet réservé, relire les formulaires par nom exact (`trouver --ecrire`), puis reprendre seulement les niches manquantes.
 - « Créer le formulaire » ne fait **rien, sans message**, tant qu'une seule réponse d'une question n'a pas de logique : chaque réponse de Q1 doit pointer vers Q2.
 - La page des prospects doit avoir un nom (champ 0) sinon l'éditeur la marque « requis ».
 - Le champ de recherche du formulaire à copier n'affiche ses choix qu'après des événements de focus simulés (`focusin`, `focus`) ; le premier « Suivant » peut ne pas ouvrir l'éditeur : le script réessaie.

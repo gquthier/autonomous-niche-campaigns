@@ -85,8 +85,12 @@ else:
     stop("l'éditeur ne s'est pas ouvert sur la copie")
 
 # 2. bonne copie ? puis le nom final
-assert E.cliquer_texte(L["etape_type"]) is True; time.sleep(2.5)
-f = E.champs()
+f = []
+for _ in range(8):   # le dialogue peut apparaître avant ses champs
+    E.cliquer_texte(L["etape_type"]); time.sleep(3)
+    f = E.champs()
+    if f:
+        break
 if not (f and f[0]["ph"].startswith(L["nom_placeholder"]) and f[0]["v"].startswith(BASE)):
     stop(f"mauvaise copie ouverte : {f[:1]}")
 if E.saisir(0, FINAL) != FINAL:
@@ -150,7 +154,10 @@ if E.saisir(0, nom_e1) != nom_e1 or E.saisir(3, P.lien_reservation(N)) != P.lien
     stop("page des prospects : nom ou lien non saisi")
 time.sleep(1.5)
 t = E.texte(longueur=30000)
-i = t.find(L["apercu_debut"]); apercu = t[i:i + 700] if i >= 0 else ""
+i = t.find(L["apercu_debut"])
+if i < 0:   # variante du libellé de confidentialité observée en novembre 2026
+    i = t.rfind(L["envoyer_apercu"], 0, max(t.find(FIN["titre"]), 0))
+apercu = t[i:i + 700] if i >= 0 else ""
 print("aperçu des fins :", apercu[:400])
 if not (apercu.count(FIN["titre"]) == 2 and apercu.count(FIN["bouton"]) >= 2 and L["apercu_non_prospect"] in apercu):
     stop("les deux pages de fin ne sont pas identiques dans l'aperçu")

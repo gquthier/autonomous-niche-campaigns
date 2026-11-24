@@ -205,7 +205,8 @@ class FauxMeta:
                   for q in p.get("questions", [])]
             return self._creer("form", name=p["name"], status="ACTIVE", questions=qs, context_card=p.get("context_card"))
         if path == f"{self.act}/adcreatives":
-            return self._creer("creative", name=p.get("name"), object_story_spec=p.get("object_story_spec", {}))
+            options = {"asset_feed_spec": p["asset_feed_spec"]} if "asset_feed_spec" in p else {}
+            return self._creer("creative", name=p.get("name"), object_story_spec=p.get("object_story_spec", {}), **options)
         if path == f"{self.act}/ads":
             return self._creer("ad", name=p["name"], adset_id=p["adset_id"], creative=p["creative"], status=p.get("status", "PAUSED"))
         if path in self.monde["objets"]:
